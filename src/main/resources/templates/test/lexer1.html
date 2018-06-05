@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<head th:include="heads::commonHead"></head>
+<body>
+
+<div th:include="header::header">
+
+</div>
+
+
+<div class="lexer-main">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card bg-secondary text-white">
+                <div class="card-header">
+                    输入SNL代码：
+                </div>
+                <div class="card-body">
+                    <form action="/lexer">
+                        <div>
+                            <textarea class="form-control" name="program" rows="25"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <input class="btn btn-light submit" type="submit" value="提交">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5 offset-1">
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

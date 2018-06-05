@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<head th:include="heads::commonHead"></head>
+<body>
+<div th:include="header::header"></div>
+<div style="margin-top: 100px">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="tab-chrome" role="tab" data-toggle="tab">Chrome</a>
+        </li>
+        <li>
+            <a href="#tab-firefox" role="tab" data-toggle="tab">Firefox</a>
+        </li>
+        <li>
+            <a href="#tab-safari" role="tab" data-toggle="tab">Safari</a>
+        </li>
+        <li>
+            <a href="#tab-opera" role="tab" data-toggle="tab">Opera</a>
+        </li>
+        <li>
+            <a href="#tab-ie" role="tab" data-toggle="tab">IE</a>
+        </li>
+    </ul>
+    <!--标签的内容-->
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-chrome">
+            <div class="col-md-7">
+                <h1>chrome</h1>
+                <p>Google Chrome,又称chrome浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-firefox">
+            <h1>firefox</h1>
+            <p>firefox,又称firefox浏览器，是一个由firefox（谷歌）公司开发的网页浏览器。</p>
+        </div>
+        <div class="tab-pane" id="tab-safari">
+            <h1>safari</h1>
+            <p>safari,又称safari浏览器，是一个由safari（谷歌）公司开发的网页浏览器。</p>
+        </div>
+        <div class="tab-pane" id="tab-opera">
+            <h1>Opera</h1>
+            <p>Google Chrome,又称Google浏览器，是一个由Google（谷歌）公司开发的网页浏览器。</p>
+        </div>
+        <div class="tab-pane" id="tab-ie">
+            <h1>ie</h1>
+            <p>ie,又称Google浏览器，是一个由ie（谷歌）公司开发的网页浏览器。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
