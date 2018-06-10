@@ -33,21 +33,6 @@ public class LexerController {
         String s;
         ResultList result = lexer.getLexerResult(program);
         if (result.getErrs().size() == 0) {
-            /*List<Token> list = result.getResult();
-
-            if (list.size() > 0) {
-                System.out.printf("[ 行:列 ]|【 语义信息 】| 词法信息 \n");
-                System.out.printf("---------+--------------+----------\n");
-            }
-            for (Token t : list) {
-                System.out.printf("[%3d:%-3d]|【%10s】|%10s\n", t.getRow(), t.getColumn(), t.getValue(), t.getType().getStr());
-            }
-            if (list.size() > 0) {
-                System.out.printf("---------+--------------+----------\n");
-                System.out.printf("[ 行:列 ]|【 语义信息 】| 词法信息 \n");
-            }*/
-
-
             s = gson.toJson(result.getResult());
             System.out.println(s);
         } else {

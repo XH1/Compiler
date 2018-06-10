@@ -39,6 +39,7 @@ html, body {
     overflow-y: auto;
 }
 
+/*»¬ÂÖÑùÊ½*/
 .table-body::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -65,4 +66,21 @@ html, body {
     font-size: 11px;
     padding: 5px;
     width: 100%;
+}
+
+/*ztreeÍ¼±ê*/
+.ztree li span.button.ico_docu {
+    margin-right: 2px;
+    background: url("ztree/img/leaf.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: top;
+    *vertical-align: middle
+}
+
+.ztree li span.button.ico_open {
+    margin-right: 2px;
+    background: url("ztree/img/tree.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: top;
+    *vertical-align: middle
 }

@@ -43,4 +43,68 @@ $(function () {
             }
         })
     })
+
+    $("#btn_grammar_submit").click(function () {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/grammar",
+            data: $("#grammar_form").serialize(),
+            success: function (data) {
+                if (!data.hasOwnProperty("data")) {
+                    $("#modal-body").text(data);
+                    $(".modal").modal('show');
+                    return;
+                }
+
+                var setting = {
+                    data: {
+                        key: {
+                            name: "data",
+                            children: "child"
+                        }
+                    }
+                };
+                $.fn.zTree.init($("#ztree"), setting, data).expandAll(true);
+            }
+        })
+    })
+
+
+    $("#btn_lexer_file").click(function () {
+        $("#file_lexer").click();
+    })
+
+    $("#btn_grammar_file").click(function () {
+        $("#file_grammar").click();
+    })
+
+    $("#file_lexer").change(function () {
+        var reader = new FileReader();
+        var path = this.value;
+        reader.readAsText(this.files[0]);
+        reader.onload = function (ev) {
+            if (!/\.txt/.test(path)) {
+                $("#modal-body").text("请选择文本文件！");
+                $(".modal").modal('show');
+            } else {
+                $("#txt_lexer").text(this.result);
+            }
+        }
+    })
+
+    $("#file_grammar").change(function () {
+        var reader = new FileReader();
+        var path = this.value;
+        reader.readAsText(this.files[0]);
+        reader.onload = function (ev) {
+            if (!/\.txt/.test(path)) {
+                $("#modal-body").text("请选择文本文件！");
+                $(".modal").modal('show');
+            } else {
+                $("#txt_grammar").text(this.result);
+            }
+        }
+    })
 });
+
